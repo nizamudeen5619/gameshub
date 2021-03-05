@@ -1,0 +1,43 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/admin/productlist" href="#">Current Games</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/admin/addproduct" href="#">Add Game</a>
+  </li>
+</ul>
+<br>
+
+<div class="card mb-3">
+  <h4 class="card-header" style="text-align: center;">Current Games</h4>
+  <div class="card-body">
+    <table class="table table-bordered" style="width: 80%;margin-left: 10%;">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Category</th>
+          <th scope="col">Description</th>
+          <th scope="col">Price</th>
+          <th scope="col">Image</th>
+          <th scope="col" colspan="2" style="text-align: center;">Controls</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let prod of product;">
+          <td>{{prod.ProductName}}</td>
+          <td>{{prod.ProductCategory}}</td>
+          <td>{{prod.ProductDesc}}</td>
+          <td>{{prod.ProductPrice | currency:'INR'}}</td>
+          <td><img [src]="prod.ProductImage" style="width: 100px" /></td>
+          
+          <td class ="text-center">
+            <a class="btn btn-light" [routerLink]="['/admin/editproduct/'+prod._id]">Edit</a>
+          </td>
+          <td>
+            <a (click)="productdelete(prod._id)" class="btn btn-light">Delete</a>
+          </td>
+        </tr>                  
+      </tbody>
+    </table>
+</div>
+</div>

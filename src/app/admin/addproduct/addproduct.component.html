@@ -1,0 +1,55 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link " routerLink="/admin/productlist" href="#">Current Games</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/admin/addproduct" href="#">Add Game</a>
+  </li>
+</ul>
+<br>
+<div class="card" style="width: 50%;margin-left: 25%;">
+<h4 class="card-header">Add Products</h4>
+
+<div class="card-body">
+  <form (submit) ="productAdd()" enctype="multipart/form-data">
+    <label for="productname"><strong>Product Name</strong></label>
+    <input type="text" id="productname" name="productname" 
+    [(ngModel)]="product.ProductName">
+
+    <label for="productprice"><strong>Product Price</strong></label>
+    <input type="text" id="productprice" name="productprice" 
+    [(ngModel)]="product.ProductPrice">
+
+    <label for="Category"><strong>Product Category</strong></label>
+    <select id="Category" name="Category" [(ngModel)]="product.ProductCategory">
+      <option value="PC">PC</option>
+      <option value="PS">PS</option>
+      <option value="PSP">PSP</option>
+    </select>
+    <label for="subject"><strong>Product Description</strong></label>
+    <textarea id="subject" name="subject" style="height:100px" 
+    [(ngModel)]="product.ProductDesc"></textarea>
+
+    <div class ="form-group-row">
+      <label for="filebutton"><strong>Image</strong></label>
+
+      <div class="col-md-4">
+        <input id="filebutton"  name="filebutton"  class="input-file"  type="file" 
+         placeholder="filebutton"  (change) ="fileChangeEvent($event)"/>
+         <button type="button" class ="btn btn-dark"  (click)="upload()">
+         <i class="glyphicon glyphicon-open-file"></i>&nbsp;Upload
+       </button>
+        </div>
+    </div>
+    <div class="form-group-row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-4">
+        <div>
+          <img [src]="product.ProductImage" width="200px" />
+        </div>
+      </div>
+    </div><br>
+    <input class="btn btn-dark" type="submit" value="Add Product">
+  </form>
+</div>
+</div>

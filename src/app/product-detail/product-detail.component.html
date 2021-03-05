@@ -1,0 +1,26 @@
+<br>
+		<div class="container">
+		<div class="card" style="margin-top: 60px">
+			<div class="container-fliud">
+				<div class="wrapper row">
+					<div class="preview col-md-6">
+						<div class="preview-pic tab-content">
+						  <div class="tab-pane active" id="pic-1"><img src="{{product.ProductImage}}"  style="height: 400px;"/></div>
+						</div>						
+					</div>
+					<div class="details col-md-6">
+						<h3 class="product-title">{{product.ProductName}}</h3>
+						<br><br>
+						<h5 class="product-description"><strong>Description:</strong> {{product.ProductDesc}}</h5>
+						<h5 class="product-description"><strong>Category:</strong> {{product.ProductCategory}}</h5><br>
+						<h5 class="price"><strong>Current price:</strong> <span>{{product.ProductPrice|currency:'USD'}}</span></h5><br>
+						<div class="action">								
+							<button class="btn btn-dark" (click)="addToCart(product)" type="button">Add to Cart</button>&nbsp;&nbsp;
+							<button class="btn btn-light" routerLink="/">Back</button> 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  

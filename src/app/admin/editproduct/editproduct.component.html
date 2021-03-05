@@ -1,0 +1,33 @@
+<br>
+  <div class="card" style="width: 50%;margin-left: 25%;">
+    <h4 class="card-header">EDIT PRODUCTS</h4>
+<div class="card-body">
+  <form (submit)="productEdit()">
+    <label for="productname"><strong>Product Name</strong></label>
+    <input type="text" id="productname" name="productname" placeholder="Your name.." 
+    [(ngModel)]="product.ProductName">
+
+    <label for="productprice"><strong>Product Price</strong></label>
+    <input type="text" id="productprice" name="productprice" placeholder="Your  price.." 
+    [(ngModel)]="product.ProductPrice">
+
+    <label for="productcategory"><strong>Product Category</strong></label>
+    <select id="productcategory" name="productcategory" [(ngModel)]="product.ProductCategory">
+      <option value="PC">PC</option>
+      <option value="PS">PS</option>
+      <option value="PSP">PSP</option>
+    </select>
+
+    <label for="subject"><strong>Product Desc</strong></label>
+    <textarea id="subject" name="subject"  placeholder="Write something.."  style="height:100px" 
+    [(ngModel)]="product.ProductDesc"></textarea>
+    
+    <label for="pimage"><strong>Product Image</strong></label>
+    <input type="text" id="lname" name="productimage" 
+    [(ngModel)]="product.ProductImage">
+    <input class="btn btn-dark" type="submit" value="Edit Product">&nbsp;&nbsp;&nbsp;
+  <button class="btn btn-light" routerLink="/admin/productlist">Cancel</button>
+  </form>
+
+</div>
+</div>

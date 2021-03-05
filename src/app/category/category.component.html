@@ -1,0 +1,27 @@
+<form (ngSubmit)="getCategory()" style="margin-left:35%;margin-top: 2%;">    
+  <div class="form-row">
+    <strong><label for="category">Select Category:</label></strong>
+      <select id="category" name="category" class="form-control" style="width: 200px;">
+        <option value=""></option>
+        <option value="PC">PC</option>
+        <option value="PS">PS</option>
+        <option value="PSP">PSP</option>
+      </select>
+      <button type="submit" class="btn btn-dark">Go</button>
+  </div>
+  </form>
+  <br>
+<div class="card text-center">
+    <div class="row">
+      <div class="col-md-3 mx-max my-4" *ngFor="let prod of categorisedProduct" >
+        <img class="card-img-top" src="{{prod.ProductImage}}" alt="Card image cap">
+        <div class="card bg-light mb-3">
+          <div class="card-header">{{prod.ProductName}}</div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{prod.ProductPrice|currency:'INR'}}</li>
+            <li class="list-group-item"> <a [routerLink]="['/productdetail/' + prod._id]" class="btn btn-dark">View Details</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
