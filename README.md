@@ -10,17 +10,36 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+## Server Implementation
+
+The server is implemented using Express.js, Node.js, and MongoDB.
+
+### Features
+
+#### Admin:
+- **Product Management:**
+  - Add, edit, and delete products.
+
+#### User:
+- **Authentication:**
+  - Sign up and login functionalities.
+- **Shopping:**
+  - Manage a shopping cart.
+  - Checkout process.
+
+#### Display:
+- **Product Display:**
+  - Display games with sorting options by category.
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Running the Server
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+1. Navigate to the `server` directory.
+2. Run `npm install` to install server dependencies.
+3. Run `npm start` to start the server.
 
 ## Further help
 
